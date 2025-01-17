@@ -1,8 +1,11 @@
+h1 {
+	font-size:40px;
+}
 h1,	h2, h3{
 	color: orangered;
 	border-bottom: 2px solid goldenrod;
 	float: left;
-	width: 20px;
+	width: 50px;
 	padding-bottom: 4px;
 }
 a:hover {
