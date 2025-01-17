@@ -1,11 +1,4 @@
-	table {
-		text-align: left;
-		width: 100%;
-		border-collapse: collapse;
-	}
-	
-	h1
-	{
+	h1	{
 		color: green;
 		font-size: 40px;
 	}
@@ -14,17 +7,23 @@
 		display:block;
 		border: 2px goldenrod;
 	}
-	#header
-	{
+	#header	{
 		background-color: pink;
 	}
 	#header a:link{}
 	#header a:visited{}
-	#header a:hover { background-color: red}
+	#header a:hover {
+		background-color: red
+	}
 	#header a:active {}
-	#container
-	{
+	#container {
 		width: 400px;
 		background-color: #eeeeee;
 		margin: 0 auto 0 auto;
+	}
+	#faculty-info {
+		text-align: left;
+		max-width: 100%;
+		border-collapse: collapse;
+		overflow-x: scroll;
 	}
