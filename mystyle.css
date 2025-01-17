@@ -1,0 +1,19 @@
+	h2
+	{
+		color: green;
+		font-size: 40px;
+	}
+	#header
+	{
+		background-color: pink;
+	}
+	#header a:link{}
+	#header a:visited{}
+	#header a:hover { background-color: red}
+	#header a:active {}
+	#container
+	{
+		width: 400px;
+		background-color: #eeeeee;
+		margin: 0 auto 0 auto;
+	}
