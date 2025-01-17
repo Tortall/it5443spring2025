@@ -1,13 +1,9 @@
-h1	{
+h1,	h2, h3{
 	color: green;
 	font-size: 40px;
+	border-bottom: 2px goldenrod
 }
-h1:after, h2:after {
-	content: '';
-	display:block;
-	border: 2px goldenrod;
-}
-	li::marker {
+li::marker {
 	color: purple;
 }
 #header	{
