@@ -8,6 +8,9 @@ h1,	h2, h3{
 	width: 100%;
 	padding-bottom: 4px;
 }
+th, td {
+	padding: 15px;
+}
 a:hover {
 	text-decoration: none;
 }
@@ -41,6 +44,6 @@ li::marker {
 	width : 150px;
 	height: 150px;
 	border-radius: 50%;
-   overflow: hidden;
-   object-position: left;
+	overflow: hidden;
+	object-position: left;
 }
