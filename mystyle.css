@@ -30,7 +30,8 @@ li::marker {
 }
 #container {
 	width: 100%;
-	font-size: 40px;
+	font-size: 75px;
+	color: #ffc629
 }
 #faculty-info {
 	text-align: left;
