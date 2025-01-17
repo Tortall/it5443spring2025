@@ -11,8 +11,12 @@ h1,	h2, h3{
 th, td {
 	padding: 15px;
 }
+a {
+	color:darkolivegreen;
+}
 a:hover {
 	text-decoration: none;
+	color:purple
 }
 li::marker {
 	color: purple;
