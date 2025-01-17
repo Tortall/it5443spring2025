@@ -1,7 +1,18 @@
-	h2
+	table {
+		text-align: left;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	
+	h1
 	{
 		color: green;
 		font-size: 40px;
+	}
+	h1:after {
+		content: '';
+		display:block;
+		border: 2px goldenrod;
 	}
 	#header
 	{
