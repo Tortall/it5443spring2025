@@ -16,6 +16,8 @@ li::marker {
 }
 #header	{
 	background-color: goldenrod;
+	font-size: 20px;
+	width: 100%;
 }
 #header a:link{}
 #header a:visited{}
@@ -27,7 +29,7 @@ li::marker {
 }
 #container {
 	width: 100%;
-	font-size: 20px;
+	font-size: 40px;
 }
 #faculty-info {
 	text-align: left;
