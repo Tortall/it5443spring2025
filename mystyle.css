@@ -23,7 +23,7 @@ li::marker {
 	width: 100%;
 }
 #header a:hover {
-	background-color: red;
+	background-color: #B2B4B2;
 }
 #header a:active {
 	background-color: teal;
