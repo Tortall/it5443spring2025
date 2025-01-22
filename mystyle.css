@@ -47,6 +47,7 @@ li::marker {
 }
 #content {
 	font-family: 'Times New Roman', Times, serif;
+	padding: 1px;
 }
 #faculty-info {
 	text-align: left;
