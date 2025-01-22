@@ -18,6 +18,9 @@ th {
 th, td {
 	padding: 15px;
 }
+p {
+	font-family: 'Times New Roman', Times, serif;
+}
 a {
 	color:darkolivegreen;
 }
