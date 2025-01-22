@@ -43,6 +43,7 @@ li::marker {
 	width: 100%;
 	font-size: 100px;
 	color: #ffc629;
+	background-color: #B2B4B2;
 }
 #content {
 	font-family: 'Times New Roman', Times, serif;
