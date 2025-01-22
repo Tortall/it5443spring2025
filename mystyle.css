@@ -36,9 +36,6 @@ li::marker {
 #header a:hover {
 	background-color: #B2B4B2;
 }
-#header a:active {
-	background-color: teal;
-}
 #container {
 	width: 100%;
 	font-size: 100px;
