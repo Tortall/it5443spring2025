@@ -62,3 +62,9 @@ li::marker {
 	overflow: hidden;
 	object-position: left;
 }
+.button {
+	background-color: #ffc629;
+	color: black;
+	border: none;
+	border-radius:10px;
+}
