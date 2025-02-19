@@ -54,8 +54,9 @@
 			</tr>
 		</table>
 	</div>
-    <div id="eligibility">
+    <div>
         <h2>Check Your Eligibility</h2>
+        <p id="eligibility">
         <form id="evaluationForm">
             <label for="status">Student Status:</label>
             <select id="status" name="status" onchange="updateCourses()">
@@ -63,6 +64,7 @@
                 <option value="undergraduate">Undergraduate</option>
                 <option value="graduate">Graduate</option>
             </select>
+        </p>
             <p></p>
             <button type="button" class="button" onclick="evaluate()">Evaluate</button>
         </form>
