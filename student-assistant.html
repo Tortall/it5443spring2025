@@ -135,7 +135,7 @@
 
             const averageGrade = totalPoints / validGrades;
             const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `Your average grade is ${averageGrade.toFixed(2)}.`;
+            resultDiv.innerHTML = `<br />Your average grade is ${averageGrade.toFixed(2)}.`;
 
             let meetsRequirement = false;
             if ((status === "undergraduate" && averageGrade >= 3.2) || (status === "graduate" && averageGrade > 3.7)) {
