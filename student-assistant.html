@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schedule</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
+<body>
+	<div id="container">
+        <a href="https://www.kennesaw.edu/ccse/academics/information-technology/index.php">
+		<img src ="/docs/ccse_ksu_logo.png" alt="CCSE KSU Logo" width="100" style="display: inline;"></a>
+		<img src="/docs/carit-logo.png" alt="Center for Applied Research in Information Technology" height="100" style="display:inline;">
+    </div>
+	<div id="header">Menu:
+		<a href="index.html">Home</a> | 
+    	<a href="about.html">About Us</a> | 
+		<a href="schedule.htm">Schedule</a>
+    </div>
+
+	<div id="content">
+		<h1>Student Assistant Positions</h1>
+        <p>This summer CARIT wil be hiring four student assistants. To be eligable the student must have completed the courses listed below.
+            <a href="#eligability">Check your eligability</a>.
+        </p>
+		<table>
+			<tr>
+				<th>Student Status</th>
+				<th>Courses Required Completion</th>
+				<th>Grade Average Requirement<br />(for the four courses required)</th>
+			</tr>
+			<tr>
+				<td data-cell="student status">Undergraduate</td>
+				<td data-cell="courses required">
+                    <ol>
+                        <li>CSE 3203 Overview of Mobile System OR IT 3203 Introduction to Web Development</li>
+                        <li>IT 4402 Advanced Web and Mobile Applications</li>
+                        <li>CS 4712 User Interface Engineering</li>
+                        <li>CS 4720 Internet Programming</li>
+                    </ol>
+                </td>
+				<td data-cell="grade average">>3.2</td>
+			</tr>
+			<tr>
+				<td data-cell="student status">Graduate</td>
+				<td data-cell="courses required">
+                    <ol>
+                        <li>IT 7113 Data Visualization</li>
+                        <li>IT 6203 IT Design Studio</li>
+                        <li>SWE 6813 Web Service Engineering</li>
+                        <li>IT 7923 Advanced Web Technologies</li>
+                    </ol>
+                </td>
+				<td data-cell="grade average">>3.7</td>
+			</tr>
+		</table>
+	</div>
+    <div id="eligibility">
+        <form id="evaluationForm">
+            <label for="status">Student Status:</label>
+            <select id="status" name="status" onchange="updateCourses()">
+                <option value="">Select Status</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
+            </select>
+            <div id="courses"></div>
+            <button type="button" onclick="evaluate()">Evaluate</button>
+        </form>
+        <div id="result"></div>
+    
+        <script>
+            const courses = {
+                undergraduate: ["CSE 3202", "IT 4402", "CS 4712", "CS 4720"],
+                graduate: ["IT 7113", "IT 6203", "SWE 6813", "IT 7923"]
+            };
+    
+            const gradePoints = {
+                A: 4.0,
+                B: 3.0,
+                C: 2.0,
+                D: 1.0,
+                F: 0.0
+            };
+    
+            function updateCourses() {
+                const status = document.getElementById("status").value;
+                const coursesDiv = document.getElementById("courses");
+                coursesDiv.innerHTML = "";
+    
+                if (status) {
+                    courses[status].forEach(course => {
+                        const label = document.createElement("label");
+                        label.textContent = course;
+                        const select = document.createElement("select");
+                        select.name = course;
+                        ["A", "B", "C", "D", "F"].forEach(grade => {
+                            const option = document.createElement("option");
+                            option.value = grade;
+                            option.textContent = grade;
+                            select.appendChild(option);
+                        });
+                        coursesDiv.appendChild(label);
+                        coursesDiv.appendChild(select);
+                        coursesDiv.appendChild(document.createElement("br"));
+                    });
+                }
+            }
+    
+            function evaluate() {
+                const status = document.getElementById("status").value;
+                if (!status) {
+                    alert("Please select your student status.");
+                    return;
+                }
+    
+                const selectedCourses = courses[status];
+                let totalPoints = 0;
+                let validGrades = 0;
+    
+                selectedCourses.forEach(course => {
+                    const grade = document.querySelector(`select[name="${course}"]`).value;
+                    if (grade) {
+                        totalPoints += gradePoints[grade];
+                        validGrades++;
+                    }
+                });
+    
+                if (validGrades === 0) {
+                    alert("Please enter grades for all courses.");
+                    return;
+                }
+    
+                const averageGrade = totalPoints / validGrades;
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `Your average grade is ${averageGrade.toFixed(2)}.`;
+    
+                if (averageGrade >= 3.0) {
+                    resultDiv.innerHTML += `<p>Congratulations! You meet the average grade requirement.</p>
+                    <p>Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a student assistant at CARIT.</p>`;
+                } else {
+                    resultDiv.innerHTML += `<p>Unfortunately, you do not meet the average grade requirement.</p>`;
+                }
+            }
+        </script>
+    </div>
+	<p></p>
+
+    <footer>This website is for Kennesaw State University course IT 5443 section W01 in spring 2025.<br />
+    <a href="http://it5443.azurewebsites.net">Class Website</a>
+    </footer>
+</body>
+</html>
