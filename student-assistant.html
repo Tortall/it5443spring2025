@@ -137,7 +137,12 @@
             const resultDiv = document.getElementById("result");
             resultDiv.innerHTML = `Your average grade is ${averageGrade.toFixed(2)}.`;
 
-            if (averageGrade >= 3.0) {
+            let meetsRequirement = false;
+            if ((status === "undergraduate" && averageGrade >= 3.2) || (status === "graduate" && averageGrade > 3.7)) {
+                meetsRequirement = true;
+            }
+
+            if (meetsRequirement) {
                 resultDiv.innerHTML += `<p>Congratulations! You meet the average grade requirement.</p>
                 <p>Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a student assistant at CARIT.</p>`;
             } else {
@@ -146,7 +151,7 @@
         }
 
         document.getElementById("evaluateButton").addEventListener("click", evaluateStudentGrades);
-
+        
     </script>
     </div>
 	<p></p>
