@@ -109,41 +109,38 @@
             }
     
             function evaluate() {
-    const status = document.getElementById("status").value;
-    if (!status) {
-        alert("Please select your student status.");
-        return;
-    }
+                const status = document.getElementById("status").value;
+                if (!status) {
+                    alert("Please select your student status.");
+                    return;
+                }
+                
+                const selectedCourses = courses[status];
+                let totalPoints = 0;
+                let validGrades = 0;
 
-    const selectedCourses = courses[status];
-    let totalPoints = 0;
-    let validGrades = 0;
-
-    selectedCourses.forEach(course => {
-        const grade = document.querySelector(`select[name="${course}"]`).value;
-        console.log(`Course: ${course}, Grade: ${grade}`); // Debugging line
-        if (grade) {
-            totalPoints += gradePoints[grade];
-            validGrades++;
-        }
-    });
-
-    if (validGrades === 0) {
-        alert("Please enter grades for all courses.");
-        return;
-    }
-
-    const averageGrade = totalPoints / validGrades;
-    const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = `Your average grade is ${averageGrade.toFixed(2)}.`;
-
-    if (averageGrade >= 3.0) {
-        resultDiv.innerHTML += `<p>Congratulations! You meet the average grade requirement.</p>
-        <p>Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a student assistant at CARIT.</p>`;
-    } else {
-        resultDiv.innerHTML += `<p>Unfortunately, you do not meet the average grade requirement.</p>`;
-    }
-}
+                selectedCourses.forEach(course => {
+                    const grade = document.querySelector(`select[name="${course}"]`).value;
+                    console.log(`Course: ${course}, Grade: ${grade}`); // Debugging line
+                    if (grade) {
+                        totalPoints += gradePoints[grade];
+                        validGrades++;
+                    }
+                });
+                if (validGrades === 0) {
+                    alert("Please enter grades for all courses.");
+                    return;
+                }
+                const averageGrade = totalPoints / validGrades;
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `Your average grade is ${averageGrade.toFixed(2)}.`;
+                if (averageGrade >= 3.0) {
+                    resultDiv.innerHTML += `<p>Congratulations! You meet the average grade requirement.</p>
+                    <p>Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a student assistant at CARIT.</p>`;
+                } else {
+                    resultDiv.innerHTML += `<p>Unfortunately, you do not meet the average grade requirement.</p>`;
+                }
+            }
         </script>
     </div>
 	<p></p>
