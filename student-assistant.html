@@ -3,6 +3,83 @@
 <head>
 	<title>Schedule</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css" />
+    <script>
+        function submitRadio()
+        {
+            var radiobuttons = document.forms[0].status;          
+            if (radiobuttons[0].checked)
+                status=radiobuttons[0].value;
+            else if (radiobuttons[1].checked)
+                status=radiobuttons[1].value;
+            dropDown()
+        }
+        function dropDown(){
+            if (status == "grad"){
+                document.getElementById("hideDrop").style.display = "block"; 
+                document.getElementById("submitButton").style.display = "block";
+                document.getElementById("finalResult").innerHTML = ""
+            }
+            else if (status == "undergrad"){
+                document.getElementById("hideDrop").style.display = "block"; 
+                document.getElementById("submitButton").style.display = "block";
+                document.getElementById("finalResult").innerHTML = "";
+            }
+            var x = document.getElementsByClassName("gradform");
+            var y = document.getElementsByClassName("undergradform");
+            if (status == "undergrad") {
+                y[0].style.display = "block";
+                y[1].style.display = "block";
+                y[2].style.display = "block";
+                y[3].style.display = "block";
+                y[4].style.display = "block";
+                x[0].style.display = "none";
+                x[1].style.display = "none";
+                x[2].style.display = "none";
+                x[3].style.display = "none";
+                x[4].style.display = "none";        
+            }
+            else if (status == "grad"){
+                y[0].style.display = "none";
+                y[1].style.display = "none";
+                y[2].style.display = "none";
+                y[3].style.display = "none";
+                y[4].style.display = "none";
+                x[0].style.display = "block";
+                x[1].style.display = "block";
+                x[2].style.display = "block";
+                x[3].style.display = "block";
+                x[4].style.display = "block";     
+            }
+        }
+
+        function submitDrop() {
+            var grade1 = document.forms[0].grade1.value;
+            var grade2 = document.forms[0].grade2.value;
+            var grade3 = document.forms[0].grade3.value;
+            var grade4 = document.forms[0].grade4.value;
+            var grade5 = document.forms[0].grade5.value;
+            if (status == "undergrad") {
+                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4)+parseFloat(grade5))/5;
+            }
+            else if (status == "grad") {
+                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
+            }
+            var result = result.toFixed(1);
+            if (status == "grad" && result > 3.7){
+                document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
+                ". Congratulations! You are eligible to apply for the student assistant position. Application form coming soon.";
+            }
+            else if (status == "grad" && result <= 3.7){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
+            ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
+            }
+            else if (status =="undergrad" && result > 3.2){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
+            ". Congratulations! You are eligible to apply for the student assistant position. Application coming soon.";
+            }
+            else if (status =="undergrad" && result <= 3.2){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
+            ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
+            }
+        }
+    </script>
 </head>
 <body>
 	<div id="container">
@@ -54,111 +131,76 @@
 			</tr>
 		</table>
 	</div>
-    <div>
-        <h2 id="eligability">Check Your Eligibility</h2>
-        <form id="evaluationForm">
-            <label for="status">Student Status:</label>
-            <select id="status" name="status" onchange="updateCourses()">
-                <option value="">Select Status</option>
-                <option value="undergraduate">Undergraduate</option>
-                <option value="graduate">Graduate</option>
-            </select>
-            <p></p>
-            <div id="courses"></div>
-            <p></p>
-            <button type="button" class="button" id="evaluateButton">Evaluate</button>
+    <div id="radioForm">
+        <form name="profile">
+            <center><strong>Select your current status then click 'Submit'.</strong></center>
+            <br>
+            <div id="status">
+                <input type="radio" name="status" value="undergrad">Undergraduate 
+                <input type="radio" name="status" value="grad">Graduate
+            </div>   
+                <br>
+                <input type="button" class="button" value="Submit" onclick="submitRadio()">
+                <br>
+            <hr style="width:50%; height:1px; background-color: #000000; border:none;">    
         </form>
-        <p></p>
-        <div id="result">
-        <p></p>
-        <script>
-            const courses = {
-                undergraduate: ["CSE 3202", "IT 4403", "IT 4733", "CSE 3125"],
-                graduate: ["IT 7113", "IT 6203", "IT 7103", "IT 7143"]
-            };
+    </div>
+    <br />
+    <div id="hideDrop" style="display: block;">
+        <strong>Select your grades for the classes below then click 'Evaluate'.</strong>
+        <br />
+        <span class="undergradform" style="display: none;">CSE 3203 Overview of Mobile System:</span>
+        <span class="gradform" style="display: block;">IT 7113 Data Visualization:</span>
+            <select name="grade1">
+                <option value="" selected="selected">-</option>
+                <option value="4">A</option>
+                <option value="3">B</option>
+                <option value="2">C</option>
+                <option value="1">D</option>
+                <option value="0">F</option>
+            </select>
+        <br>
+        <span class="undergradform" style="display: none;">IT 4403 Advanced Web and Mobile Applications:</span>
+        <span class="gradform" style="display: block;">T 6203 IT Design Studio:</span>
+            <select name="grade2">
+                <option value="" selected="selected">-</option>
+                <option value="4">A</option>
+                <option value="3">B</option>
+                <option value="2">C</option>
+                <option value="1">D</option>
+                <option value="0">F</option>
+            </select>
     
-            const gradePoints = {
-                A: 4.0,
-                B: 3.0,
-                C: 2.0,
-                D: 1.0,
-                F: 0.0
-            };
+        <span class="undergradform" style="display: none;">IT 4733 Big Data System Administration: </span>
+        <span class="gradform" style="display: block;">IT 7103 Pratical Data Analytics: </span>
+        <select name="grade3">
+            <option value="" selected="selected">-</option>
+            <option value="4">A</option>
+            <option value="3">B</option>
+            <option value="2">C</option>
+            <option value="1">D</option>
+            <option value="0">F</option>
+        </select>
     
-            function updateCourses() {
-            const status = document.getElementById("status").value;
-            const coursesDiv = document.getElementById("courses");
-            coursesDiv.innerHTML = "";
-
-            if (status) {
-                courses[status].forEach(course => {
-                    const label = document.createElement("label");
-                    label.textContent = course;
-                    const select = document.createElement("select");
-                    select.name = course;
-                    select.required = true; // Ensure a grade is selected
-                    ["", "A", "B", "C", "D", "F"].forEach(grade => {
-                        const option = document.createElement("option");
-                        option.value = grade;
-                        option.textContent = grade;
-                        select.appendChild(option);
-                    });
-                    coursesDiv.appendChild(label);
-                    coursesDiv.appendChild(select);
-                    coursesDiv.appendChild(document.createElement("br"));
-                });
-            }
-        }
-
-        function evaluateStudentGrades() {
-            const status = document.getElementById("status").value;
-            if (!status) {
-                alert("Please select your student status.");
-                return;
-            }
-
-            const selectedCourses = courses[status];
-            let totalPoints = 0;
-            let validGrades = 0;
-
-            selectedCourses.forEach(course => {
-                const grade = document.querySelector(`select[name="${course}"]`).value;
-                if (grade) {
-                    totalPoints += gradePoints[grade];
-                    validGrades++;
-                }
-            });
-
-            if (validGrades === 0) {
-                alert("Please enter grades for all courses.");
-                return;
-            }
-
-            const averageGrade = totalPoints / validGrades;
-            const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<br /><p>Your average grade is ${averageGrade.toFixed(2)}.</p>`;
-
-            let meetsRequirement = false;
-            if ((status === "undergraduate" && averageGrade >= 3.2) || (status === "graduate" && averageGrade > 3.7)) {
-                meetsRequirement = true;
-            }
-
-            if (meetsRequirement) {
-                resultDiv.innerHTML += `<p class="formResponse">Congratulations! You meet the average grade requirement.<br /><br />
-                Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the
-                subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a
-                student assistant at CARIT.</p>`;
-            } else {
-                resultDiv.innerHTML += `<p class="formResponse">Unfortunately, you do not meet the average grade requirement.</p>`;
-            }
-        }
-
-        document.getElementById("evaluateButton").addEventListener("click", evaluateStudentGrades);
-
-    </script>
+        <span class="undergradform" style="display: none;">CSE 3125 Database Systems: </span>
+        <span class="gradform" style="display: block;">IT 7143 Cloud Analytics Technology: </span>
+        <select name="grade4">
+            <option value="" selected="selected">-</option>
+            <option value="4">A</option>
+            <option value="3">B</option>
+            <option value="2">C</option>
+            <option value="1">D</option>
+            <option value="0">F</option>
+        </select>
+    </div>
+    <div id="submitButton" style="display: block;">
+        <input type="button" class="button" value="Evaluate" onclick="submitDrop()">
+    </div>
+    <br />
+    <div>
+        <p id="finalResult"></p>
     </div>
 	<p></p>
-
     <footer>This website is for Kennesaw State University course IT 5443 section W01 in spring 2025.<br />
     <a href="http://it5443.azurewebsites.net">Class Website</a>
     </footer>
