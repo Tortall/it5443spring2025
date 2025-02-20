@@ -71,3 +71,8 @@ li::marker {
 	font-weight: bold;
 	text-transform: uppercase;
 }
+
+.form {
+	border-style: groove;
+	border: 5px solid orangered;
+}
