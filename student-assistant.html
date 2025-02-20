@@ -24,6 +24,11 @@
                 document.getElementById("submitButton").style.display = "block";
                 document.getElementById("finalResult").innerHTML = "";
             }
+            else if (status == ""){
+                document.getElementById("hideDrop").style.display = "none"; 
+                document.getElementById("submitButton").style.display = "none";
+                document.getElementById("finalResult").innerHTML = "";
+            }
             var x = document.getElementsByClassName("gradform");
             var y = document.getElementsByClassName("undergradform");
             if (status == "undergrad") {
