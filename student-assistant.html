@@ -24,37 +24,32 @@
                 document.getElementById("submitButton").style.display = "block";
                 document.getElementById("finalResult").innerHTML = "";
             }
-            else if (status == ""){
-                document.getElementById("hideDrop").style.display = "none"; 
-                document.getElementById("submitButton").style.display = "none";
-                document.getElementById("finalResult").innerHTML = "";
-            }
-            var x = document.getElementsByClassName("gradform");
-            var y = document.getElementsByClassName("undergradform");
-            if (status == "undergrad") {
-                y[0].style.display = "block";
-                y[1].style.display = "block";
-                y[2].style.display = "block";
-                y[3].style.display = "block";
-                y[4].style.display = "block";
-                x[0].style.display = "none";
-                x[1].style.display = "none";
-                x[2].style.display = "none";
-                x[3].style.display = "none";
-                x[4].style.display = "none";        
-            }
-            else if (status == "grad"){
-                y[0].style.display = "none";
-                y[1].style.display = "none";
-                y[2].style.display = "none";
-                y[3].style.display = "none";
-                y[4].style.display = "none";
-                x[0].style.display = "block";
-                x[1].style.display = "block";
-                x[2].style.display = "block";
-                x[3].style.display = "block";
-                x[4].style.display = "block";     
-            }
+        }
+        var x = document.getElementsByClassName("gradform");
+        var y = document.getElementsByClassName("undergradform");
+        if (status == "undergrad") {
+            y[0].style.display = "block";
+            y[1].style.display = "block";
+            y[2].style.display = "block";
+            y[3].style.display = "block";
+            y[4].style.display = "block";
+            x[0].style.display = "none";
+            x[1].style.display = "none";
+            x[2].style.display = "none";
+            x[3].style.display = "none";
+            x[4].style.display = "none";        
+        }
+        else if (status == "grad"){
+            y[0].style.display = "none";
+            y[1].style.display = "none";
+            y[2].style.display = "none";
+            y[3].style.display = "none";
+            y[4].style.display = "none";
+            x[0].style.display = "block";
+            x[1].style.display = "block";
+            x[2].style.display = "block";
+            x[3].style.display = "block";
+            x[4].style.display = "block";     
         }
 
         function submitDrop() {
@@ -165,7 +160,7 @@
             </select>
         <br>
         <span class="undergradform">IT 4403 Advanced Web and Mobile Applications:</span>
-        <span class="gradform">T 6203 IT Design Studio:</span>
+        <span class="gradform">IT 6203 IT Design Studio:</span>
             <select name="grade2">
                 <option value="" selected="selected">-</option>
                 <option value="4">A</option>
