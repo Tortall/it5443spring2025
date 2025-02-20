@@ -92,3 +92,16 @@ li::marker {
     display: none;
     font-family: 'Times New Roman', Times, serif;
 }
+#radioForm {
+    font-family: 'Times New Roman', Times, serif;
+}
+#submitButton {
+    display: none;
+    text-align: center; 
+}
+#finalResult {
+    color: black;
+    font-size: 20px;
+    margin: auto;
+    width: fit-content;
+}
