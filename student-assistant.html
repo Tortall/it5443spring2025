@@ -68,7 +68,8 @@
             <p></p>
             <button type="button" class="button" id="evaluateButton">Evaluate</button>
         </form>
-        <div id="result" class="form">
+        <p></p>
+        <div id="result">
         <p></p>
         <script>
             const courses = {
@@ -135,7 +136,7 @@
 
             const averageGrade = totalPoints / validGrades;
             const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<br />Your average grade is ${averageGrade.toFixed(2)}.`;
+            resultDiv.innerHTML = `<p class="form"><br />Your average grade is ${averageGrade.toFixed(2)}.</p>`;
 
             let meetsRequirement = false;
             if ((status === "undergraduate" && averageGrade >= 3.2) || (status === "graduate" && averageGrade > 3.7)) {
@@ -143,10 +144,10 @@
             }
 
             if (meetsRequirement) {
-                resultDiv.innerHTML += `<br /><p>Congratulations! You meet the average grade requirement.</p>
+                resultDiv.innerHTML += `<br /><p class="form">Congratulations! You meet the average grade requirement.</p>
                 <p>Please email <a href="mailto:CARIT@kennesaw.edu?subject=CARIT Student Assistant">CARIT@kennesaw.edu</a> with the subject line "CARIT Student Assistant" with your full name and a short paragraph on why you want to work as a student assistant at CARIT.</p>`;
             } else {
-                resultDiv.innerHTML += `<br /><p>Unfortunately, you do not meet the average grade requirement.</p>`;
+                resultDiv.innerHTML += `<br /><p class="form">Unfortunately, you do not meet the average grade requirement.</p>`;
             }
         }
 
