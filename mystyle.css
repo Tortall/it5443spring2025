@@ -81,12 +81,10 @@ li::marker {
 .gradform {
     display: none;
     color: black;
-    text-shadow: 1px 1px #ffc629; 
 }
 .undergradform {
     display: none;
     color: black;
-	text-shadow: 1px 1px #ffc629; 
 }
 #hideDrop {
     display: none;
