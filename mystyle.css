@@ -72,7 +72,7 @@ li::marker {
 	text-transform: uppercase;
 }
 
-.form {
+.formResponse {
 	border-style: groove;
 	border: 5px solid;
 	width: fit-content;
