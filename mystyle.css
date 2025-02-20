@@ -65,15 +65,10 @@ li::marker {
 .button {
 	background-color: #ffc629;
 	color: black;
-	border: none;
+	border: 2px;
+	border-color:black;
 	border-radius: 10px;
 	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
-}
-
-.formResponse {
-	border-style: groove;
-	border: 5px solid;
-	width: fit-content;
 }
