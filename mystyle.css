@@ -95,7 +95,6 @@ li::marker {
 }
 #submitButton {
     display: none;
-    text-align: center; 
 }
 #finalResult {
     color: black;
