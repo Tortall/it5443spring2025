@@ -68,5 +68,5 @@ li::marker {
 	border: none;
 	border-radius: 10px;
 	font-size: 20px;
-	text-decoration: solid;
+	font-weight: bold;
 }
