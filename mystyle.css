@@ -72,3 +72,23 @@ li::marker {
 	font-weight: bold;
 	text-transform: uppercase;
 }
+#grades {
+    display: none; 
+}
+#showgrade {
+    display: none;
+}
+.gradform {
+    display: none;
+    color: black;
+    text-shadow: 1px 1px #ffc629; 
+}
+.undergradform {
+    display: none;
+    color: black;
+	text-shadow: 1px 1px #ffc629; 
+}
+#hideDrop {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+}
