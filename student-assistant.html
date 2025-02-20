@@ -7,13 +7,12 @@
         function submitRadio() {
             var radiobuttons = document.forms[0].status;  
 
-            if (radiobuttons[0].checked) {
+            if (radiobuttons[0].checked)
                 status=radiobuttons[0].value;
-            }
-            else if (radiobuttons[1].checked) {
+            else if (radiobuttons[1].checked)
                 status=radiobuttons[1].value;
-                dropDown()
-            }
+            
+            dropDown()
         }
 
         function dropDown(){
