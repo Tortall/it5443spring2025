@@ -11,19 +11,20 @@
                 status=radiobuttons[0].value;
             else if (radiobuttons[1].checked)
                 status=radiobuttons[1].value;
-
-            dropDown()
+                dropDown()
         }
 
         function dropDown(){
             if (status == "grad"){
                 document.getElementById("hideDrop").style.display = "block"; 
                 document.getElementById("submitButton").style.display = "block";
-                document.getElementById("finalResult").innerHTML = "";}
+                document.getElementById("finalResult").innerHTML = "";
+            }
             else if (status == "undergrad"){
                 document.getElementById("hideDrop").style.display = "block"; 
                 document.getElementById("submitButton").style.display = "block";
-                document.getElementById("finalResult").innerHTML = "";}
+                document.getElementById("finalResult").innerHTML = "";
+            }
             
             var x = document.getElementsByClassName("gradform");
             var y = document.getElementsByClassName("undergradform");
@@ -59,7 +60,6 @@
             var grade2 = document.forms[0].grade2.value;
             var grade3 = document.forms[0].grade3.value;
             var grade4 = document.forms[0].grade4.value;
-            var grade5 = document.forms[0].grade5.value;
 
             if (status == "undergrad") {
                 var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
