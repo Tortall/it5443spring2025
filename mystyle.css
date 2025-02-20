@@ -74,5 +74,6 @@ li::marker {
 
 .form {
 	border-style: groove;
-	border: 5px solid orangered;
+	border: 5px solid;
+	width: fit-content;
 }
