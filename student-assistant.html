@@ -4,52 +4,54 @@
 	<title>Schedule</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css" />
     <script>
-        function submitRadio()
-        {
-            var radiobuttons = document.forms[0].status;          
+        function submitRadio() {
+            var radiobuttons = document.forms[0].status;  
+
             if (radiobuttons[0].checked)
                 status=radiobuttons[0].value;
             else if (radiobuttons[1].checked)
                 status=radiobuttons[1].value;
-                dropDown()
+
+            dropDown()
         }
+
         function dropDown(){
             if (status == "grad"){
                 document.getElementById("hideDrop").style.display = "block"; 
                 document.getElementById("submitButton").style.display = "block";
-                document.getElementById("finalResult").innerHTML = ""
-            }
+                document.getElementById("finalResult").innerHTML = "";}
             else if (status == "undergrad"){
                 document.getElementById("hideDrop").style.display = "block"; 
                 document.getElementById("submitButton").style.display = "block";
-                document.getElementById("finalResult").innerHTML = "";
+                document.getElementById("finalResult").innerHTML = "";}
+            
+            var x = document.getElementsByClassName("gradform");
+            var y = document.getElementsByClassName("undergradform");
+
+            if (status == "undergrad") {
+                y[0].style.display = "block";
+                y[1].style.display = "block";
+                y[2].style.display = "block";
+                y[3].style.display = "block";
+                y[4].style.display = "block";
+                x[0].style.display = "none";
+                x[1].style.display = "none";
+                x[2].style.display = "none";
+                x[3].style.display = "none";
+                x[4].style.display = "none";        
             }
-        }
-        var x = document.getElementsByClassName("gradform");
-        var y = document.getElementsByClassName("undergradform");
-        if (status == "undergrad") {
-            y[0].style.display = "block";
-            y[1].style.display = "block";
-            y[2].style.display = "block";
-            y[3].style.display = "block";
-            y[4].style.display = "block";
-            x[0].style.display = "none";
-            x[1].style.display = "none";
-            x[2].style.display = "none";
-            x[3].style.display = "none";
-            x[4].style.display = "none";        
-        }
-        else if (status == "grad"){
-            y[0].style.display = "none";
-            y[1].style.display = "none";
-            y[2].style.display = "none";
-            y[3].style.display = "none";
-            y[4].style.display = "none";
-            x[0].style.display = "block";
-            x[1].style.display = "block";
-            x[2].style.display = "block";
-            x[3].style.display = "block";
-            x[4].style.display = "block";     
+            else if (status == "grad"){
+                y[0].style.display = "none";
+                y[1].style.display = "none";
+                y[2].style.display = "none";
+                y[3].style.display = "none";
+                y[4].style.display = "none";
+                x[0].style.display = "block";
+                x[1].style.display = "block";
+                x[2].style.display = "block";
+                x[3].style.display = "block";
+                x[4].style.display = "block";     
+            }
         }
 
         function submitDrop() {
@@ -58,25 +60,31 @@
             var grade3 = document.forms[0].grade3.value;
             var grade4 = document.forms[0].grade4.value;
             var grade5 = document.forms[0].grade5.value;
+
             if (status == "undergrad") {
-                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4)+parseFloat(grade5))/5;
+                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
             }
             else if (status == "grad") {
                 var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
             }
+
             var result = result.toFixed(1);
-            if (status == "grad" && result > 3.7){
+
+            if (status == "grad" && result > 3.7) {
                 document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
                 ". Congratulations! You are eligible to apply for the student assistant position. Application form coming soon.";
             }
-            else if (status == "grad" && result <= 3.7){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
-            ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
+            else if (status == "grad" && result <= 3.7) {
+                document.getElementById("finalResult").innerHTML = "Your GPA is " + result + 
+                ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
             }
-            else if (status =="undergrad" && result > 3.2){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
-            ". Congratulations! You are eligible to apply for the student assistant position. Application coming soon.";
+            else if (status =="undergrad" && result > 3.2) {
+                document.getElementById("finalResult").innerHTML = "Your GPA is " + result + 
+                ". Congratulations! You are eligible to apply for the student assistant position. Application coming soon.";
             }
-            else if (status =="undergrad" && result <= 3.2){document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
-            ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
+            else if (status =="undergrad" && result <= 3.2) {
+                document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
+                ". Unfortunately, your GPA does not meet the minimum requirements to apply for the student assistant position.";
             }
         }
     </script>
