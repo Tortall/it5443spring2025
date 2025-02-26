@@ -54,17 +54,18 @@
 
         function submitGrades() {
             var grade1 = document.getElementById;("grade1").value;
-            console.log(grade1)
-           
-            var grade2 = document.forms[0].grade2.value;
-            var grade3 = document.forms[0].grade3.value;
-            var grade4 = document.forms[0].grade4.value;
+            var grade2 = document.getElementById;("grade2").value;
+            var grade3 = document.getElementById;("grade3").value;
+            var grade4 = document.getElementById;("grade4").value;
+
+            let dictionary = {};
+                Object.assign(dictionary, { "A": 4, "B": 3, "C": 2, "D": 1, "F": 0});
 
             if (status == "undergrad") {
-                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
+                var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
             }
             else if (status == "grad") {
-                var result=(parseFloat(grade1)+parseFloat(grade2)+parseFloat(grade3)+parseFloat(grade4))/4;
+                var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
             }
 
             var result = result.toFixed(1);
