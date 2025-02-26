@@ -60,15 +60,15 @@
 console.log(grade1)
             result = 0
 
-            let dictionary = {};
-                Object.assign(dictionary, { "4": 4, "3": 3, "2": 2, "1": 1, "0": 0});
+            //let dictionary = {};
+                //Object.assign(dictionary, { "4": 4, "3": 3, "2": 2, "1": 1, "0": 0});
             
 
             if (status == "undergrad") {
-                var result=(dictionary.grade1+dictionary.grade2+dictionary.grade3+dictionary.grade4)/4;
+                var result=(grade1+grade2+grade3+grade4)/4;
             }
             else if (status == "grad") {
-                var result=(dictionary.grade1+dictionary.grade2+dictionary.grade3+dictionary.grade4)/4;
+                var result=(grade1+grade2+grade3+grade4)/4;
             }
             console.log(result)
 
