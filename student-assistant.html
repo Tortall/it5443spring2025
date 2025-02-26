@@ -4,7 +4,6 @@
 	<title>Schedule</title>
 	<link rel="stylesheet" type="text/css" href="mystyle.css" />
     <script>
-        consol.log()
         function submitRadio() {
             var radiobuttons = document.forms[0].status;  
 
@@ -68,7 +67,7 @@
             else if (status == "grad") {
                 var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
             }
-
+console.log(result)
             var result = result.toFixed(1);
 
             if (status == "grad" && result > 3.7) {
