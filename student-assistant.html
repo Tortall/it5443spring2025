@@ -58,6 +58,8 @@
             var grade3 = document.getElementById;("grade3").value;
             var grade4 = document.getElementById;("grade4").value;
 
+            result = 0
+
             let dictionary = {};
                 Object.assign(dictionary, { "A": 4, "B": 3, "C": 2, "D": 1, "F": 0});
 
@@ -67,7 +69,9 @@
             else if (status == "grad") {
                 var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
             }
-console.log(result)
+            console.log(result)
+
+
             var result = result.toFixed(1);
 
             if (status == "grad" && result > 3.7) {
