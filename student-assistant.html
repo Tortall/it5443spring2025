@@ -53,15 +53,16 @@
         }
 
         function submitGrades() {
-            var grade1 = document.getElementById;("grade1").value;
-            var grade2 = document.getElementById;("grade2").value;
-            var grade3 = document.getElementById;("grade3").value;
-            var grade4 = document.getElementById;("grade4").value;
-
+            var grade1 = document.getElementById;("grade1");
+            var grade2 = document.getElementById;("grade2");
+            var grade3 = document.getElementById;("grade3");
+            var grade4 = document.getElementById;("grade4");
+console.log(submitGrades)
             result = 0
 
             let dictionary = {};
                 Object.assign(dictionary, { "A": 4, "B": 3, "C": 2, "D": 1, "F": 0});
+            
 
             if (status == "undergrad") {
                 var result=(dictionary.grade1+dictionary.grade2+dictionary.grade3+dictionary.grade4)/4;
