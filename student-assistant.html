@@ -53,7 +53,9 @@
         }
 
         function submitGrades() {
-            var grade1 = document.forms[0].grade1.value;
+            var grade1 = document.forms[0].grade1.value();
+            console.log(grade1)
+           
             var grade2 = document.forms[0].grade2.value;
             var grade3 = document.forms[0].grade3.value;
             var grade4 = document.forms[0].grade4.value;
