@@ -64,10 +64,10 @@
                 Object.assign(dictionary, { "A": 4, "B": 3, "C": 2, "D": 1, "F": 0});
 
             if (status == "undergrad") {
-                var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
+                var result=(dictionary.grade1+dictionary.grade2+dictionary.grade3+dictionary.grade4)/4;
             }
             else if (status == "grad") {
-                var result=(parseFloat(dictionary.grade1)+parseFloat(dictionary.grade2)+parseFloat(dictionary.grade3)+parseFloat(dictionary.grade4))/4;
+                var result=(dictionary.grade1+dictionary.grade2+dictionary.grade3+dictionary.grade4)/4;
             }
             console.log(result)
 
