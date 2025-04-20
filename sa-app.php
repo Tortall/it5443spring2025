@@ -11,7 +11,7 @@
     <div id="content">
         <h1>CARIT Student Assistant Application</h1>
 
-        <form action="sa-app-submitted.php" method="post" id="caritAppForm">
+        <form action="sa-app-submitted.php" method="post">
     
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" id="firstName" required><br />
@@ -47,12 +47,12 @@
 
             <div id="checkboxForm" class="checkbox-group">
                 <input type="checkbox" id="agreement" name="agreement">
-                <label for="agreement" style="display:inline;">
+                <label for="agreement">
                 I understand that filling out this form does not guarantee me a position with CARIT
                 </label>
             </div><br />
 
-            <div id="submitContainer">
+            <div id="submitContainer" style="display: none;">
                 <button type="submit" id="submitBtn" class="button" value="Submit"></button>
             </div>
         </form>
@@ -62,13 +62,12 @@
 
     <?php include 'footer.php'; ?>
     <script>
-    const checkbox = document.getElementById('agreement');
-    const submitContainer = document.getElementById('submitContainer');
+        const checkbox = document.getElementById('agreement');
+        const submitContainer = document.getElementById('submitContainer');
 
-    checkbox.addEventListener('change', function () {
-        // Show submit button if checkbox is checked, otherwise hide it
-        submitContainer.style.display = this.checked ? 'block' : 'none';
-    });
+        checkbox.addEventListener('change', function () {
+            submitContainer.style.display = this.checked ? 'block' : 'none';
+        });
     </script>
 </body>
 </html>
