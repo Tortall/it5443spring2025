@@ -27,3 +27,9 @@
             <?php echo isset($_POST['agreement']) ? 'Yes' : 'No'; ?>
         </p>
     </div>
+
+    <p></p>
+
+<?php include 'footer.php'; ?>
+</body>
+</html>
