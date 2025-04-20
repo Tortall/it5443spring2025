@@ -206,8 +206,6 @@ console.log(typeof grade1)
         <p id="finalResult"></p>
     </div>
 	<p></p>
-    <footer>This website is for Kennesaw State University course IT 5443 section W01 in spring 2025.<br />
-    <a href="http://it5443.azurewebsites.net">Class Website</a>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
 </head>
 <body>
-    
+
 <?php include 'header.php'; ?>
 
     <div id="content">
@@ -48,8 +48,6 @@
 
 	<p></p>
 
-    <footer>This website is for Kennesaw State University course IT 5443 section W01 in spring 2025.<br />
-    <a href="http://it5443.azurewebsites.net">Class Website</a>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
