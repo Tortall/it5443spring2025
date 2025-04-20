@@ -40,7 +40,7 @@
                 <option value="Game Design and Development">Game Design and Development</option>
                 <option value="Data Science">Data Science</option>
                 <option value="Artificial Intelligence">Artificial Intelligence</option>
-            </select><br />
+            </select><br /><br />
 
             <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label><br />
             <textarea name="reason" id="reason" required></textarea><br /><br />
