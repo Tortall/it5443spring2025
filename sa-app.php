@@ -28,7 +28,7 @@
             <input type="text" name="lastName" id="lastName" required><br />
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required><br />
+            <input type="email" name="email" id="email" required><br /><br />
 
             <label>Student Status:</label>
             <div id="radioForm">
@@ -50,19 +50,18 @@
                 <option value="Artificial Intelligence">Artificial Intelligence</option>
             </select><br />
 
-    <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label>
-    <textarea name="reason" id="reason" required></textarea><br />
+            <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label>
+            <textarea name="reason" id="reason" required></textarea><br /><br />
 
-    <div id="checkboxForm">
-        <input type="checkbox" id="agreement" name="agreement">
-        <label for="agreement" style="display:inline;">I understand that filling out this form does not guarantee me a position with CARIT</label>
-    </div><br />
+            <div id="checkboxForm">
+                <input type="checkbox" id="agreement" name="agreement">
+                <label for="agreement" style="display:inline;">I understand that filling out this form does not guarantee me a position with CARIT</label>
+            </div><br />
 
-    <div id="submitButton">
-        <button type="submit" id="submitBtn" disabled>Submit</button>
-    </div>
-</form>
-
+            <div id="submitButton">
+                <button type="button" class="button" disabled value="Submit" onclick="getElementById('submitBtn')"></button>
+            </div>
+        </form>
     </div>
 
     <p></p>
