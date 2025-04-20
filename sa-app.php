@@ -50,7 +50,7 @@
                 <option value="Artificial Intelligence">Artificial Intelligence</option>
             </select><br />
 
-            <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label>
+            <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label><br />
             <textarea name="reason" id="reason" required></textarea><br /><br />
 
             <div id="checkboxForm">
