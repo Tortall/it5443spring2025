@@ -53,7 +53,7 @@
             </div><br />
 
             <div id="submitContainer" style="display: none;">
-                <button type="submit" id="submitBtn" class="button" value="Submit"></button>
+                <button type="submit" id="submitBtn" class="button">Submit</button>
             </div>
         </form>
     </div>
