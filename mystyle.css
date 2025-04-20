@@ -90,7 +90,7 @@ li::marker {
     display: none;
     font-family: 'Times New Roman', Times, serif;
 }
-#radioForm {
+#radioForm, #checkboxForm {
     font-family: 'Times New Roman', Times, serif;
 }
 #submitButton {
@@ -101,4 +101,13 @@ li::marker {
     font-size: 20px;
     margin: auto;
     width: fit-content;
+}
+.submitted-data {
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 8px;
+	max-width: 600px;
+}
+.submitted-data p {
+	margin: 10px 0;
 }

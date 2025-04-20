@@ -77,7 +77,8 @@ console.log(typeof grade1)
 
             if (status == "grad" && result > 3.7) {
                 document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
-                ". Congratulations! You are eligible to apply for the student assistant position. Application form coming soon.";
+                ". Congratulations! You are eligible to apply for the student assistant position. " + 
+                "<a href='sa-app.php'>Click here to apply now</a>.";
             }
             else if (status == "grad" && result <= 3.7) {
                 document.getElementById("finalResult").innerHTML = "Your GPA is " + result + 
@@ -85,7 +86,8 @@ console.log(typeof grade1)
             }
             else if (status =="undergrad" && result > 3.2) {
                 document.getElementById("finalResult").innerHTML = "Your GPA is " + result + 
-                ". Congratulations! You are eligible to apply for the student assistant position. Application coming soon.";
+                ". Congratulations! You are eligible to apply for the student assistant position. " + 
+                "<a href='sa-app.php'>Click here to apply now</a>.";
             }
             else if (status =="undergrad" && result <= 3.2) {
                 document.getElementById("finalResult").innerHTML = "Your GPA is " + result +
