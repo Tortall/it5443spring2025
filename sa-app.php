@@ -59,7 +59,7 @@
             </div><br />
 
             <div id="submitButton">
-                <button type="button" class="button" disabled value="Submit" onclick="getElementById('submitBtn')"></button>
+                <button type="button" class="button" value="Submit" onclick="getElementById('submitBtn')"></button>
             </div>
         </form>
     </div>
