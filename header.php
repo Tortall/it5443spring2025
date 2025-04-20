@@ -4,7 +4,7 @@
         <img src="/docs/carit-logo.png" alt="Center for Applied Research in Information Technology" height="100" style="display:inline;">
     </div>
 	<div id="header">Menu:
-	    <a href="index.php">Home Test</a> | 
+	    <a href="index.php">Home</a> | 
         <a href="about.php">About Us</a> | 
 	    <a href="schedule.php">Schedule</a> |
         <a href="student-assistant.php">Summer Student Assistants</a>
