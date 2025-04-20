@@ -46,14 +46,14 @@
             <textarea name="reason" id="reason" required></textarea><br /><br />
 
             <div id="checkboxForm" class="checkbox-group">
-            <input type="checkbox" id="agreement" name="agreement">
-            <label for="agreement" style="display:inline;">
-            I understand that filling out this form does not guarantee me a position with CARIT
-            </label>
+                <input type="checkbox" id="agreement" name="agreement">
+                <label for="agreement" style="display:inline;">
+                I understand that filling out this form does not guarantee me a position with CARIT
+                </label>
             </div><br />
 
-            <div id="submitButton">
-                <button type="submit" class="button" value="Submit"></button>
+            <div id="submitContainer">
+                <button type="submit" id="submitBtn" class="button" value="Submit"></button>
             </div>
         </form>
     </div>
