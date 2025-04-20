@@ -3,14 +3,6 @@
 <head>
     <title>Student Assistant Application</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
-    <script>
-    const checkbox = document.getElementById('agreement');
-    const submitBtn = document.getElementById('submitBtn');
-
-    checkbox.addEventListener('change', function () {
-        submitBtn.disabled = !this.checked;
-    });
-    </script>
 </head>
 <body>
 
@@ -53,13 +45,15 @@
             <label for="reason">Why should you be selected as a Student Assistant for CARIT?</label><br />
             <textarea name="reason" id="reason" required></textarea><br /><br />
 
-            <div id="checkboxForm">
-                <input type="checkbox" id="agreement" name="agreement">
-                <label for="agreement" style="display:inline;">I understand that filling out this form does not guarantee me a position with CARIT</label>
+            <div id="checkboxForm" class="checkbox-group">
+            <input type="checkbox" id="agreement" name="agreement">
+            <label for="agreement" style="display:inline;">
+            I understand that filling out this form does not guarantee me a position with CARIT
+            </label>
             </div><br />
 
             <div id="submitButton">
-                <button type="button" class="button" value="Submit" onclick="getElementById('submitBtn')"></button>
+                <button type="submit" class="button" value="Submit"></button>
             </div>
         </form>
     </div>
@@ -67,5 +61,14 @@
     <p></p>
 
     <?php include 'footer.php'; ?>
+    <script>
+    const checkbox = document.getElementById('agreement');
+    const submitContainer = document.getElementById('submitContainer');
+
+    checkbox.addEventListener('change', function () {
+        // Show submit button if checkbox is checked, otherwise hide it
+        submitContainer.style.display = this.checked ? 'block' : 'none';
+    });
+    </script>
 </body>
 </html>
