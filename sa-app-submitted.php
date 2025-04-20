@@ -15,14 +15,31 @@
         </p>
     </div>
     <div id="submitted-data">
-        <p><strong>First Name:</strong> <?php echo htmlspecialchars($_POST['firstName'] ?? ''); ?></p>
-        <p><strong>Last Name:</strong> <?php echo htmlspecialchars($_POST['lastName'] ?? ''); ?></p>
-        <p><strong>Email:</strong> <?php echo htmlspecialchars($_POST['email'] ?? ''); ?></p>
-        <p><strong>Student Status:</strong> <?php echo htmlspecialchars($_POST['status'] ?? ''); ?></p>
-        <p><strong>Major:</strong> <?php echo htmlspecialchars($_POST['major'] ?? ''); ?></p>
-        <p><strong>Why You Should Be Selected:</strong><br>
-            <?php echo nl2br(htmlspecialchars($_POST['reason'] ?? '')); ?>
-        </p>
+    <table>
+        <tr>
+            <td><strong>First Name</strong></td>
+            <td><?php echo htmlspecialchars($_POST['firstName'] ?? ''); ?></td>
+        </tr>
+        <tr>
+            <td><strong>Last Name</strong></td>
+            <td><?php echo htmlspecialchars($_POST['lastName'] ?? ''); ?></td>
+        </tr>
+        <tr>
+            <td><strong>Email</strong></td>
+            <td><?php echo htmlspecialchars($_POST['email'] ?? ''); ?></td>
+        </tr>
+        <tr>
+            <td><strong>Student Status</strong></td>
+            <td><?php echo htmlspecialchars($_POST['status'] ?? ''); ?></td>
+        </tr>
+        <tr>
+            <td><strong>Major</strong></td>
+            <td><?php echo htmlspecialchars($_POST['major'] ?? ''); ?></td>
+        </tr>
+        <tr>
+            <td><strong>Why You Should Be Selected</strong></td>
+            <td><?php echo nl2br(htmlspecialchars($_POST['reason'] ?? '')); ?></td>
+        </tr>
     </div>
 
     <p></p>
