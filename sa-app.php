@@ -60,7 +60,6 @@
 
     <p></p>
 
-    <?php include 'footer.php'; ?>
     <script>
         const checkbox = document.getElementById('agreement');
         const submitContainer = document.getElementById('submitContainer');
@@ -69,5 +68,8 @@
             submitContainer.style.display = this.checked ? 'block' : 'none';
         });
     </script>
+
+    <?php include 'footer.php'; ?>
+
 </body>
 </html>
