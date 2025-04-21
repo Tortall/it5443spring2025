@@ -40,6 +40,7 @@
             <td><strong>Why You Should Be Selected</strong></td>
             <td><?php echo nl2br(htmlspecialchars($_POST['reason'] ?? '')); ?></td>
         </tr>
+    </table>
     </div>
 
     <p></p>
